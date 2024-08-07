@@ -19,7 +19,7 @@ if (!url) {
 mongoose.connect(url)
   .then(() => console.log('Connected successfully to MongoDB'))
   .catch(err => console.error('Error connecting to MongoDB', err));
-app.post('/userenquirydata', async (req, res) => {
+app.post('/api/userenquirydata', async (req, res) => {
   const { Name, carname, phonenumber, address, carvarient } = req.body;
   try {
     const newdata = new Usersdata({
@@ -39,4 +39,4 @@ app.post('/userenquirydata', async (req, res) => {
 app.get('/', (req, res) => {
   res.json('heeloooo world');
 });
-app.listen(port, () => console.log(`Server running on ${port}`));
+
